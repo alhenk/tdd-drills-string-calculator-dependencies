@@ -5,6 +5,8 @@ package com.epam.engx.drills.calculator;
  */
 class StaticReporter {
 
+    private StaticReporter() {}
+
     static void report(String text)  {
         initReports();
         buildReports();

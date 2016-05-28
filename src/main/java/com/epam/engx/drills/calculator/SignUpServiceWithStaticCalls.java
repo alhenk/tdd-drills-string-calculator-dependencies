@@ -12,12 +12,16 @@ public class SignUpServiceWithStaticCalls {
 
     public void signUp(String user, String pass) {
         users.add(new RegisteredUser(user, pass));
-        StaticReporter.report("user added" + user + pass);
     }
 
     public Boolean isRegistered(String user, String pass) {
+        try {
+            StaticReporter.report("Checking registration for" + user + " and " + pass);
+        } catch (Exception e) {//too bad
+            StaticMessageSender.send("Exception:" + e.getMessage());
+        }
         for (RegisteredUser item : users) {
-            if (item.getUsername() == user && item.getPassword() == pass) {
+            if (item.getUsername().equals(user) && item.getPassword().equals(pass)) {
                 return true;
             }
         }
