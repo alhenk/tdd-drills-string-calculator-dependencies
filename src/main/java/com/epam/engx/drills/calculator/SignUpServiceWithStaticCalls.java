@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author Nurmakanov on 21.05.2016.
  */
-public class SignUpServiceWithStaticCalls {
+class SignUpServiceWithStaticCalls {
 
     private List<RegisteredUser> users = new ArrayList<>();
 
@@ -14,7 +14,7 @@ public class SignUpServiceWithStaticCalls {
         users.add(new RegisteredUser(user, pass));
     }
 
-    public Boolean isRegistered(String user, String pass) {
+    Boolean isRegistered(String user, String pass) {
         try {
             StaticReporter.report("Checking registration for" + user + " and " + pass);
         } catch (Exception e) {//too bad
